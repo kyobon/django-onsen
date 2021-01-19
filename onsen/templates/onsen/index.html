@@ -1,0 +1,26 @@
+{% extends 'onsen/layout.html' %}
+{% block main %}
+<div>
+    <form action="{% url 'result' %}" method='get'>
+        <table class="searching">
+            <tr>
+                <th>都道府県</th>
+                <th>肌質</th>
+                <th>効能</th>
+            </tr>
+            <tr>
+                <td class="form-right">{{ form.place }}</td>
+                <td class="form-center">{{ form.skin }}</td>
+                <td class="form-left">{{ form.efficacy }}</td>
+            </tr>
+            <tr><th></th><th>
+                <div class="inp">
+                    <input type="submit" value="検索">
+                </div>
+            </th></tr>
+                
+        </table>
+    </form>
+</div>
+
+{% endblock %}

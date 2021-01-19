@@ -1,0 +1,105 @@
+{% extends 'onsen/layout.html' %}
+{% block main %}
+<div>
+    <form action="{% url 'result' %}" method='get'>
+        
+        <table class="searching">
+            <tr>
+                <th>都道府県</th>
+                <th>肌質</th>
+                <th>効能</th>
+            </tr>
+            <tr>
+                <td class="form-right">{{ form.place }}</td>
+                <td class="form-center">{{ form.skin }}</td>
+                <td class="form-left">{{ form.efficacy }}</td>
+            </tr>
+            <tr><th></th><th>
+                <div class="inp">
+                    <input type="submit" value="検索">
+                </div>
+            </th></tr>
+                
+        </table>
+    </form>
+</div>
+<h2><span>検索条件</span></h2>
+<div class="terms">
+    <h3>都道府県：{{vplace}}</h3>
+    <h3>肌質：{{vskin}}</h3>
+    <h3>効能：{{vefficacy}}</h3>
+</div>
+<h2><span>検索結果</span></h2>
+<div>
+    <table class="result">
+        {% for item in data %}
+        <tr>
+            <td>
+                {% if item.image %}
+                <a href="{{ item.image.url }}">
+                <img alt="" src="{{ item.image.sizea.url }}">
+                </a>
+            </td>
+            <td>
+                <h3>{{item.name}}</h3>
+            </td>
+            
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<ul class="pagination">
+    {% if data.has_previous %}
+    <li class="page-item">
+        <a class='page-link' href="{% url 'result' %}?place={{vplace}}&skin={{skin}}&efficacy={{vefficacy}}">
+            &laquo; first
+        </a>
+    </li>
+    <li class="page-item">
+        <a class='page-link'
+        href="{% url 'result' %}?place={{vplace}}&skin={{skin}}&efficacy={{vefficacy}}&pag={{data.previous_page_number}}">
+            &laquo; prev</a>
+    </li>
+    {% else %}
+    <li class='page-item'>
+        <a class='page-link'>
+            &laquo; first
+        </a>
+    </li>
+    <li class='page-item'>
+        <a class='page-link'>
+            &laquo; prev
+        </a>
+    </li>
+    {% endif %}
+    <li class='page-item'>
+        <a class='page-link'>
+            {{data.number}}/{{data.paginator.num_pages}}
+        </a>
+    </li>
+    {% if data.has_next %}
+    <li class='page-item'>
+        <a class='page-link'
+        href="{% url 'result' %}?place={{vplace}}&skin={{skin}}&efficacy={{vefficacy}}&pag={{data.next_page_number}}">
+            next &raquo;</a>
+    </li>
+    <li class='page-item'>
+        <a class='page-link'
+        href="{% url 'result' %}?place={{vplace}}&skin={{skin}}&efficacy={{vefficacy}}&pag={{data.paginator.num_pages}}">
+            last &raquo;</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+        <a class='page-link'>
+            next &raquo;
+        </a>
+    </li>
+    <li class='page-item'>
+        <a class='page-link'>
+            last &raquo;
+        </a>
+    </li>
+    {% endif %}
+</ul>    
+{% endblock %}

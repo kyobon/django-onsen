@@ -1,0 +1,73 @@
+.header-high{background-size: 20px 20px;
+	background-color: #990000;
+	background-image:
+	linear-gradient(45deg, rgba(211, 122, 95, 0.5) 25%, transparent 25%,
+	 transparent 50%, rgba(211, 122, 95, 0.5) 50%, rgba(211, 122, 95, 0.5) 75%,
+	 transparent 75%, transparent),
+	linear-gradient(-45deg, rgba(211, 122, 95, 0.5) 25%, transparent 25%,
+	 transparent 50%, rgba(211, 122, 95, 0.5) 50%, rgba(211, 122, 95, 0.5) 75%,
+     transparent 75%, transparent);
+     height:30px;
+}
+.header-low{
+    background-color: #999999;
+    height: 30px;
+}
+.searching{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#id_place,#id_skin,#id_efficacy{
+    width: 200px;
+}
+.form-right,.form-center,.form-left{
+    border:  solid 3px #FF9966;
+    border-radius:10px;
+    padding:20px;
+}
+
+.inp{
+    padding:20px;
+}
+body{
+    font-family: 'Yu Mincho';
+    
+}
+h2{
+    padding-left:120px;
+}
+.terms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.terms h3{
+    padding:30px;
+}
+.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.result td{
+    border:  solid 3px #dfd5d0;
+    border-radius:10px;
+    padding:20px;
+}
+span{
+    background:linear-gradient(transparent 90%, #f08181 90%);
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style:none;
+    margin:50px;
+}
+.pagination li{
+    padding:10px 15px;
+    border:1px #ccc solid;color:#000053;
+    border-radius:5px/5px;
+}

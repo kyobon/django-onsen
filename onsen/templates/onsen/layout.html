@@ -1,0 +1,20 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'onsen/css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="header-high"></div>
+        <a href="{% url 'index' %}"><div class="header-logo"><img src="{% static 'onsen/images/titlelogo.png' %}" width="240" height="60"></div></a>
+        <div class="header-low"></div>
+        
+    </div>
+    <h2><span>条件を選択してください</span></h2>
+    <div>{% block main %}
+    {% endblock %}</div>
+</body>
+</html>
