@@ -25,7 +25,7 @@ SECRET_KEY = 'z@u1xzyb^df3=6tecirkub=7=$jtm+u(e+rst8y+645)-o*jl2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost-kyobon-1.paiza-user-free.cloud']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -133,3 +133,4 @@ MEDIA_URL = '/media/'
 # whitenoiseの導入
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
